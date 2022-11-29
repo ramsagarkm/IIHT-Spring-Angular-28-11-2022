@@ -10,7 +10,13 @@ public class RefDemo {
 		};
 		iwork.doProject(); */
 		
+		//classname::methodname
 		IWork iwork= ProjectDemo::projectProgress;
 		iwork.doProject();
+		
+		Runnable runnable= ProjectDemo::threadTask;
+		Thread t1=new Thread(runnable);
+		t1.start();
+		
 	}
 }
