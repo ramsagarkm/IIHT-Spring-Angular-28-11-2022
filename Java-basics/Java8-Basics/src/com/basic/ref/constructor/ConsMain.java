@@ -4,11 +4,8 @@ public class ConsMain {
 
 	public static void main(String[] args) {
 		System.out.println("We are studing cons ref");
-		/*IStudent iStudent=()->{
+		IStudent iStudent=()->{
 			return new Student();
-		};*/
-		IStudent iStudent=()-> new Student();
-
+		};
 	}
-
 }
