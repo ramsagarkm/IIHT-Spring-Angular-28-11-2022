@@ -18,5 +18,9 @@ public class RefDemo {
 		Thread t1=new Thread(runnable);
 		t1.start();
 		
+		Runnable runnable1= ProjectDemo::oddTo100;
+		Thread t2=new Thread(runnable1);
+		t2.start();
+		
 	}
 }
