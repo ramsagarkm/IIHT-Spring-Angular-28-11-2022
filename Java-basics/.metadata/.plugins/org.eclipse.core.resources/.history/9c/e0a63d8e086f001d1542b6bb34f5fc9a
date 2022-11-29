@@ -1,0 +1,25 @@
+package com.basic.interfaces;
+
+public class Vehicle {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
+
+}
+class Car implements Drivable {
+	public void driven() {
+		System.out.println("The car can be driven");
+		
+	}
+	
+}
+class Truck implements Drivable {
+	public void driven() {
+		System.out.println("The car can be driven");
+		
+	}
+	
+}

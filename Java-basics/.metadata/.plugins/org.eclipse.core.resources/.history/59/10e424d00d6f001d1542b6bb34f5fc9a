@@ -1,0 +1,27 @@
+package com.basic.interfaces;
+
+interface Sqauare {
+	void squar();
+	static int sq(Integer x) {return x*x;};
+}
+
+public class Calculate {
+
+	public static void main(String[] args) {
+
+		Sqauare s1=new SquareOf10();
+		s1.squar(5);
+		System.out.println(Sqauare.sq(10));
+
+	}
+}
+
+class SquareOf10 implements Sqauare{
+
+	@Override
+	public void squar() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

@@ -1,0 +1,9 @@
+package com.basic.interfaces;
+
+public interface Manufacturing {
+void made();
+}
+
+public interface Sales {
+void sold();
+}

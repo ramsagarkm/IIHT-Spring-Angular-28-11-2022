@@ -1,0 +1,10 @@
+package com.basic.functions;
+
+public class BasicFunction {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

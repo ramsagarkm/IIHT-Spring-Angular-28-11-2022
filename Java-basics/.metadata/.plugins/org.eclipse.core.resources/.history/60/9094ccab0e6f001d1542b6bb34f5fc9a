@@ -1,0 +1,18 @@
+package com.basic.interfaces;
+
+interface Sqauare {
+	void squar();
+	static int square(Integer x) {return x*x;};
+	static int division(Integer x) {return x*x;};
+	static int addition(Integer x) {return x*x;};
+	static int substraction(Integer x) {return x*x;};
+}
+
+public class CaluculateAllInOne {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

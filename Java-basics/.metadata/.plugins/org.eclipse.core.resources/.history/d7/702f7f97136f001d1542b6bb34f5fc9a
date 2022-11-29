@@ -1,0 +1,12 @@
+package com.basic.functions;
+
+public class BasicFunction {
+
+	public static void main(String[] args) {
+		System.out.println(addition(10, 20));
+
+	}
+static Integer addition(Integer num1, Integer num2) {
+	return num1+num2;
+}
+}

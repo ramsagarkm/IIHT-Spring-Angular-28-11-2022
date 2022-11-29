@@ -1,0 +1,29 @@
+package com.basic.interfaces;
+
+public interface Products {
+void made();
+}
+
+interface Sale {
+void sold();
+}
+
+class Product implements Sale, Products{
+	public static void main(String[] args) {
+		Product product=new Product();
+		product.made();
+		product.sold();
+	}
+
+	@Override
+	public void made() {
+		System.out.println("Product has been made");
+		
+	}
+	
+	@Override
+	public void sold() {
+		System.out.println("Product can be sold");
+		
+	}
+}

@@ -1,0 +1,31 @@
+package com.basic.interfaces;
+
+public interface Manufacturing {
+void made();
+}
+
+public interface Sales {
+void sold();
+}
+
+class Product implements Manufacturing, Sales{
+	public static void main(String[] args) {
+		Product product=new Product();
+		product.made();
+		product.sold();
+	}
+
+	@Override
+	public void sold() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void made() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+}

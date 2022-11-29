@@ -1,0 +1,32 @@
+package com.basic.functions;
+
+public class BasicFunction {
+
+	public static void main(String[] args) {
+		System.out.println(addition(10, 20));
+		System.out.println(substraction(100, 20));
+		System.out.println(multiplication(10, 20));
+		System.out.println(division(1000, 20));
+		System.out.println(square(10));
+
+	}
+static Integer addition(Integer num1, Integer num2) {
+	return num1+num2;
+}
+static Integer substraction(Integer num1, Integer num2) {
+	return num1+num2;
+}
+static Integer multiplication(Integer num1, Integer num2) {
+	return num1+num2;
+}
+static Integer division(Integer num1, Integer num2) {
+	return num1+num2;
+}
+static Integer square(Integer num1) {
+	return num1+num2;
+}
+static Integer cube(Integer num1, Integer num2) {
+	return num1+num2;
+}
+
+}

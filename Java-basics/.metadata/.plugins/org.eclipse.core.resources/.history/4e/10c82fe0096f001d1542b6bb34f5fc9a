@@ -1,0 +1,26 @@
+package com.basics.lambda;
+
+public class LearnLambda {
+
+	public static void main(String[] args) {
+		System.out.println("Hello");
+		
+		LearnLambda learnLambda=new LearnLambda();
+		
+		MathOperation add = (Integer a, Integer b)->a+b;
+		System.out.println(add.Opration(100, 50));
+		
+		MathOperation sub = (Integer a, Integer b)->a-b;
+		MathOperation mul = (Integer a, Integer b)->a*b;
+		MathOperation div = (Integer a, Integer b)->a/b;
+		
+	/*	System.out.println("Sum ="+ learnLambda.operate(100,50),add);
+		System.out.println("Sub ="+ learnLambda.operate(100,50),add);
+		System.out.println("Mul ="+ learnLambda.operate(100,50),add);
+		System.out.println("Div ="+ learnLambda.operate(100,50),add); */
+	}
+
+	//private Integer operate() {
+		
+	//}
+}

@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+D:\IIHT Spring Angular\IIHT_batch_7.0_28-11-22\Java-basics\.metadata\.plugins\org.eclipse.jdt.core
+1602128660.index
+3235232872.index

@@ -1,0 +1,29 @@
+package com.basic.interfaces;
+
+interface CalInterface {
+	void squar();
+	static int addition(Integer x) {return x+x;};
+	static int substraction(Integer x) {return x-x;};
+	static int square(Integer x) {return x*x;};
+	static int division(Integer x) {return x/x;};
+	
+}
+
+public class CaluculateAllInOne {
+
+	public static void main(String[] args) {
+		CalInterface s1=new CalAll();
+		s1.squar();
+		System.out.println(Sqauare.sq(10));
+
+	}
+
+}
+class CalAll implements CalInterface{
+
+	@Override
+	public void squar() {
+		System.out.println("Call All");
+		
+	}
+}
