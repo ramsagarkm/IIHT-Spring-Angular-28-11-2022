@@ -4,62 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learn Javascript</title>
+    <title>Learn JS</title>
 </head>
 <body>
-    <h1>Javascript basic training </h1>
-    <script>
-        var name="Ramsagar";
-        var age=32;
-        var isGraduate=true;
-        var laptop;
-        laptop="LG";
-        console.log(name);
+  <H1> Javascript basic training</H1>
 
-        function alertUser(){
-            var favChips="Lays Blue"//this variable is defined and destroy
-            console.log("This user has loged in "+name);
-            alert("This user has loged in "+name);
-        }
-        alertUser();
-        console.log("This user has loged in "+name);
-
-        //if, else, else if statement
-        function operators(num){
-            if(num>20){
-                console.log("Number is greater then 20");
-            }else if(num==20){
-                console.log("Number is equals then 20");
-            }else{
-                console.log("Number is smaller then 20");
-            }
-        }
-
-        operators(87);
-
-        function creditScore(score){
-            var creditLimit;
-            switch(score){
-                case 800 : creditLimit="Above 1 Lac";
-                break;
-                case 700 : creditLimit="50 K to 1 Lac";
-                break;
-                case 600 : creditLimit="10 K to 25K";
-                break;
-                default : creditLimit=" Not eligible";
-            }
-            console.log("Credit limit"+creditLimit );
-        }
-        creditScore(700);
-
-        function counting(){
-            for(let i=1;i<10;i++){
-                console.log(i);
-            }
-        }
-
-        counting();
-
+  <script src="index.js">
     </script>
 </body>
 </html>
