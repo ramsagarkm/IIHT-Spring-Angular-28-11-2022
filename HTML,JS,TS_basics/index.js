@@ -56,3 +56,33 @@
 
      var names= ["Nishat","Ramsagar","Mukesh"];
      console.log(names);
+
+     //Class creating in below ways
+     //class Car{
+     let  Car= class{
+
+        constructor(brand, modelName, price){
+            this.brand=brand;
+            this.modelName=modelName;
+            this.price=price;
+        }
+        print(){
+            console.log("This is a : "+ this.brand+ " "+this.modelName +" Which cost : "+ this.price);
+        }
+     }
+     var C1= new Car("Mercedes","A Class", 4000000);
+     var C2= new Car("BMW","C Class", 8000000);
+     C1.print();
+     C2.print();
+
+     class TodaysDate extends Date{ //example to make a class a child class of inbuilt js class.
+        constructor(){
+            super();
+        }
+
+        printDate(){
+            console.log(this.getDate());
+        }
+     }
+     let today=new TodaysDate();
+     today.printDate();
