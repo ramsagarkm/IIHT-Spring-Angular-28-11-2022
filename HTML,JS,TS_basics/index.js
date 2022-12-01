@@ -145,3 +145,26 @@ function addNumbers1(){
     //const num2 =900;
 
 }
+
+
+function Dog(){
+    this.dogName="Lab"
+    throw new error("This is not wild dog");
+}
+dogs.prototype.display = function(){
+    return "This dog breed  is : "+ this.dogName;  
+}
+
+//constructor  function
+function Animal (dogName){
+    this.dogName=dogName;
+}
+
+//Create object without using constructor
+Animal.prototype=Object.create(dogs.prototype)
+let tomy=new Animal("German shephred")
+console.log(tomy.display)
+
+function Greet(){
+    alert("Greetings fellow developers")
+}

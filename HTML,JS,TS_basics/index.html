@@ -1,15 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn JS</title>
 </head>
-<body>
-  <H1> Javascript basic training</H1>
 
-  <script src="index.js">
+<body style="background-color: chocolate;">
+    <H1 style="border-style: double; border-color: brown; text-align: center;background-color: darkblue;"> Javascript
+        basic training</H1>
+    <script src="index.js"></script>
+    <br />
+    <br />
+
+    <div>
+        <p> Learn A paragraph always starts on a new line, and browsers automatically add some white space (a margin)
+            before and after a paragraph</p>
+    </div>
+    <div style="border-style: groove; border-color: white;">
+        <h2
+            style="border-style: double;border-color: brown;text-align: center;background-color: chocolate;color: beige;">
+            User Registration</h2>
+
+            <label for="firstname">First Name</label>
+            <br/>
+            <input style="margin-bottom: 5px;margin-left: 15px;margin-top: 5px; type="text" id="firstname" placeholder="Enter Fisrt Name"/>
+            <br/>
+            <label for="lasttname">Last Name</label>
+            <br/>
+            <input style="margin-bottom: 5px;margin-left: 15px;margin-top: 5px; type="text" id="lasttname" placeholder="Enter Last Name"/>
+            <br/>
+            <label for="firstname">Email</label>
+            <br/>
+            <input style="margin-bottom: 5px;margin-left: 15px;margin-top: 5px; type="text" id="email" placeholder="Enter Email"/>
+            <br/>
+            <label for="dob">DOB</label>
+            <br/>
+            <input style="margin-bottom: 5px;margin-left: 15px;margin-top: 5px; type="date" id="date"/>
+
+        <br/>
+        <label style="margin-left: 10px;" for="gender">Gender</label> 
+        <br/>
+        <input style="margin-left: 10px;" type="radio" name="gender" value="Male" id="gender"> Male
+        <br/>
+        <input style="margin-left: 10px;" type="radio" name="gender" value="Female" id="gender"> Female
+        <br/>
+        <input style="margin-left: 10px;" type="radio" name="gender" value="others" id="gender"> Others
+        <br/>
+        <label>Choose your fav language</label>
+        <br/>
+        <input type="checkbox" id="lang" value="Java">Java
+        <input type="checkbox" id="lang" value="Javascript">Java Script
+        <input type="checkbox" id="lang" value="pathon">Python
+        <br/>
+        <button onclick="Greet()"
+        <button type="submit">Submit</button>
+
+        <a href="https://github.com/ramsagarkm/IIHT-Spring-Angular-28-11-2022/tree/main/HTML%2CJS%2CTS_basics">next page</a>
+        <!--Anchor tag-->
+
+    </div>
+
+    <div>
+        <!--Ordered list-->
+        <ol style="border-style: groove; border-color: black;">
+        <li> boil 2 cups of water</li>
+        <li> boil 2 cups of water</li>
+        <li> boil 2 cups of water</li>
+        <li> boil 2 cups of water</li>
+        </ol>
+
+        <ul>
+            <!--Un-ordered list-->
+            <li> get grocery</li>
+            <li> get car washed</li>
+            <li> take my dog to the vet</li>
+        </ul>
+
+    </div>
+
     </script>
 </body>
+
 </html>
