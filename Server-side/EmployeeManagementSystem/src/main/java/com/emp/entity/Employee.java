@@ -53,4 +53,9 @@ public class Employee {
 		this.email = email;
 		this.salary = salary;
 	}
+	public Employee() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
 }
