@@ -15,6 +15,7 @@ public class Employee {
 	private String empPosition;
 	private String email;
 	private Integer salary;
+	
 	public Integer getEmpId() {
 		return empId;
 	}
