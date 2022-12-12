@@ -1,5 +1,4 @@
 package com.user.entity;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,6 +18,7 @@ public class User {
 
 	public User() {
 		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	public User(String userFirstName, String userLastName, String userEmail, String userPassword, String userRole) {

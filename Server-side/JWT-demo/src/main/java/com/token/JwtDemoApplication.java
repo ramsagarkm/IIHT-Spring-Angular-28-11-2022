@@ -1,5 +1,6 @@
 package com.token;
 
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -13,6 +14,7 @@ public class JwtDemoApplication {
 		SpringApplication.run(JwtDemoApplication.class, args);
 	}
 
+	@SuppressWarnings("deprecation")
 	@Bean
 	public PasswordEncoder passwordEncoder() {
 		return NoOpPasswordEncoder.getInstance();

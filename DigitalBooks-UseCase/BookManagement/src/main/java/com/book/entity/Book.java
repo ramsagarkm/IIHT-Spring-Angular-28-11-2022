@@ -1,7 +1,6 @@
 package com.book.entity;
 
-import java.sql.Date;
-
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,6 +8,7 @@ import javax.persistence.Id;
 
 @Entity
 public class Book {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer bookId;
@@ -22,38 +22,15 @@ public class Book {
 	private String content;
 	private boolean active;
 
-	public Book() {
-		super();
+	public Integer getAuthorId() {
+		return authorId;
 	}
 
-	public Book(String logo, String title, String category, Double price, String author, String publisher,
-			Date publishedDate, String content, boolean active) {
-		super();
-		this.logo = logo;
-		this.title = title;
-		this.category = category;
-		this.price = price;
-		this.author = author;
-		this.publisher = publisher;
-		this.publishedDate = publishedDate;
-		this.content = content;
-		this.active = active;
+	public void setAuthorId(Integer authorId) {
+		this.authorId = authorId;
 	}
 
-	public Book(Integer bookId, String logo, String title, String category, Double price, String author,
-			String publisher, Date publishedDate, String content, boolean active) {
-		super();
-		this.bookId = bookId;
-		this.logo = logo;
-		this.title = title;
-		this.category = category;
-		this.price = price;
-		this.author = author;
-		this.publisher = publisher;
-		this.publishedDate = publishedDate;
-		this.content = content;
-		this.active = active;
-	}
+	private Integer authorId;
 
 	public Integer getBookId() {
 		return bookId;
@@ -134,4 +111,39 @@ public class Book {
 	public void setActive(boolean active) {
 		this.active = active;
 	}
+
+	public Book() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Book(String logo, String title, String category, Double price, String author, String publisher,
+			Date publishedDate, String content, boolean active) {
+		super();
+		this.logo = logo;
+		this.title = title;
+		this.category = category;
+		this.price = price;
+		this.author = author;
+		this.publisher = publisher;
+		this.publishedDate = publishedDate;
+		this.content = content;
+		this.active = active;
+	}
+
+	public Book(Integer bookId, String logo, String title, String category, Double price, String author,
+			String publisher, Date publishedDate, String content, boolean active) {
+		super();
+		this.bookId = bookId;
+		this.logo = logo;
+		this.title = title;
+		this.category = category;
+		this.price = price;
+		this.author = author;
+		this.publisher = publisher;
+		this.publishedDate = publishedDate;
+		this.content = content;
+		this.active = active;
+	}
+
 }

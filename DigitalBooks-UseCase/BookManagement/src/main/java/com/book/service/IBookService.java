@@ -3,12 +3,14 @@ package com.book.service;
 import com.book.entity.Book;
 
 public interface IBookService {
+	
+	public Book addBook(Book book, Integer authorId);
 
-	public Book addBook(Book b);
+	public Book editBook(Book book, Integer bookId);
+	
+	public Book getBookBySubId(String userEmail , Integer subscriptionId);
 
-	public Book editBook(Book b, Integer bookId);
-
-	public Boolean blockBook(String block);
-
-	public Boolean unblockBook(String block);
+	public Boolean setBookState(String block);
+	
+	public Boolean cancelSubscription(Integer subscriptionId);
 }
