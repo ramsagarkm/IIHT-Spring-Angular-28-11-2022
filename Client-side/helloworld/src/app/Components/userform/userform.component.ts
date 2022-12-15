@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import User from 'src/app/Entity/user';
+import { UserService } from 'src/app/Services/user.service';
 
 @Component({
   selector: 'app-userform',
@@ -7,21 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserformComponent implements OnInit {
   title: String = 'Please fill the form below ';
-
-  firstname: String = '';
-  lastname: String = '';
-  age = 0;
-  gender: String = 'male';
-  email: String = '';
-
+  user: User = new User();
   save() {
-    console.log("Name : "+ this.firstname + ' ' + this.lastname);
-    console.log("Your Age is : "+ this.age);
-    console.log("Gender "+ this.gender);
-    console.log("your email add is :" + this.email);
-  }
-
-  constructor() {}
-
+    const observables = this.userService.saveUser(this.user);
+    observables.subscribe ( 
+      (response:any) => {
+        console.log(response);    
+      }, function(error) {
+        console.log(error);
+        alert("something went wrong, Please try again!")
+      })}
+  constructor(private userService : UserService) {}
   ngOnInit(): void {}
 }
