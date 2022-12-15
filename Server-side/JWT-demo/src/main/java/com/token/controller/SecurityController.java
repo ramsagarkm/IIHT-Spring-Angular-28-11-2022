@@ -28,7 +28,7 @@ public class SecurityController {
 	private UserService userService;
 	
 
-	@GetMapping("/")
+	@GetMapping("/hello")
 	public String home() {
 		return "Hello and Welcome to home page"; 
 	}
