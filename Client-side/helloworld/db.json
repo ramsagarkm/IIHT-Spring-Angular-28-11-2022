@@ -32,6 +32,14 @@
       "gender": "male",
       "email": "ram@gmail.com",
       "id": 5
+    },
+    {
+      "firstname": "Mukesh",
+      "lastname": "Kumar",
+      "age": 35,
+      "gender": "male",
+      "email": "mukesh@gmail.com",
+      "id": 6
     }
   ]
 }
