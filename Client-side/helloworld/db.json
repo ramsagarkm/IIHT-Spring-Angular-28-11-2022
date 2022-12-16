@@ -8,9 +8,6 @@
       "id": 1
     },
     {
-      "id": 2
-    },
-    {
       "firstname": "Steve",
       "lastname": "Murphy",
       "age": 50,
@@ -34,11 +31,11 @@
       "id": 5
     },
     {
-      "firstname": "Mukesh",
-      "lastname": "Kumar",
-      "age": 35,
+      "firstname": "shivam",
+      "lastname": "singh",
+      "age": 36,
       "gender": "male",
-      "email": "mukesh@gmail.com",
+      "email": "shivam@gmail.com",
       "id": 6
     }
   ]

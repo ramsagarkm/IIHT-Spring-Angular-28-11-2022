@@ -12,7 +12,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatMenuModule} from '@angular/material/menu';
 import { HttpClientModule } from '@angular/common/http';
 import { RegUsersComponent } from './Components/reg-users/reg-users.component';
-import { PipesComponent } from './components/pipes/pipes.component';
+import { PipesComponent } from './Components/pipes/pipes.component';
 import { EllipsisPipe } from './Pipe/ellipsis.pipe';
 
 @NgModule({
