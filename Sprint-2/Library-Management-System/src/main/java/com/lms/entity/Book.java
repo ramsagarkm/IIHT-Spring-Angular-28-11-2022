@@ -13,7 +13,7 @@ public class Book {
 	private Integer bookId;
 	private String bookName;
 	private String bookAuthor;
-	private Float bookPrice;
+	private Double bookPrice;
 	private String bookGenration;
 	private Boolean borrowedStatus;
 
@@ -41,11 +41,11 @@ public class Book {
 		this.bookAuthor = bookAuthor;
 	}
 
-	public Float getBookPrice() {
+	public Double getBookPrice() {
 		return bookPrice;
 	}
 
-	public void setBookPrice(Float bookPrice) {
+	public void setBookPrice(Double bookPrice) {
 		this.bookPrice = bookPrice;
 	}
 
@@ -65,7 +65,7 @@ public class Book {
 		this.borrowedStatus = borrowedStatus;
 	}
 
-	public Book(String bookName, String bookAuthor, Float bookPrice, String bookGenration, Boolean borrowedStatus) {
+	public Book(String bookName, String bookAuthor, Double bookPrice, String bookGenration, Boolean borrowedStatus) {
 		super();
 		this.bookName = bookName;
 		this.bookAuthor = bookAuthor;

@@ -18,16 +18,15 @@ import org.springframework.web.bind.annotation.RestController;
 import com.lms.entity.Book;
 import com.lms.service.IBookService;
 
+@CrossOrigin(allowedHeaders = "*", origins = "*")
 @RestController
-@RequestMapping("/book")
-@CrossOrigin("http://localhost:4200/")
 public class BookController {
 
 	@Autowired
 	private IBookService iIBookService;
 
 	// Create book “/add/book” -> post
-	@PostMapping("/addBook")
+	@PostMapping("/book/addBook")
 	Integer saveBook(@RequestBody Book book) {
 		Integer id = iIBookService.saveBook(book);
 		return id;

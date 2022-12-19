@@ -1,0 +1,21 @@
+.navbar {
+    border-color: black;
+    border-style: double;
+    background-color: #8000ff;
+    color: bisque;
+    font-weight: 300;
+}
+
+.navbar-brand {
+    color: bisque;
+    font-weight: 800;
+    font-style: italic;
+    font-family: cursive;
+}
+
+.nav-link {
+    color: bisque;
+    font-weight: 800;
+    font-style: italic;
+    font-family: cursive;
+}

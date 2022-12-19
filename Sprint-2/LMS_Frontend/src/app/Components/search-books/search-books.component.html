@@ -1,0 +1,28 @@
+<div class="container mt-5">
+    <button style="background-color: #00bfff;"  type="button" class="btn btn-primary w-100" (click)="getAllBooks()">Search All Books</button>
+    <table class="table table-bordered mt-5">
+        <thead>
+          <tr>
+            <th>Book ID</th>
+            <th>Book Name</th>
+            <th>Book Author</th>
+            <th>Book Price</th>
+            <th>Book Genre</th>
+            <th>Book Status</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody class="tbody">
+          <tr *ngFor="let book of bookDetails">
+            <td>{{book.bookId}}</td> 
+            <td>{{book.bookName}}</td>
+            <td>{{book.bookAuthor}}</td>
+            <td>{{book.bookPrice}}</td>
+            <td>{{book.bookGenration}}</td>
+            <td>{{book.borrowedStatus}}</td>
+           <!---- <td><button type="button" class="btn btn-danger" (click)="deleteBook(book)">Delete</button></td> -->
+            <td><button type="button" (click)="deleteBook(book.bookId)" class="btn btn-outline-danger">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+</div>
