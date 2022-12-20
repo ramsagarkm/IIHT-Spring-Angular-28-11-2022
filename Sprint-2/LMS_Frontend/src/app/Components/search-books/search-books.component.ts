@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import Book from 'src/app/models/Book';
 import { BookService } from 'src/app/Services/book.service';
 
 @Component({
@@ -10,7 +9,6 @@ import { BookService } from 'src/app/Services/book.service';
 export class SearchBooksComponent implements OnInit {
 
   bookDetails =null;
-  books: Book[] = [];
   constructor(private bookService: BookService) { }
 
   
@@ -18,7 +16,7 @@ export class SearchBooksComponent implements OnInit {
     this.bookService.getBooks().subscribe(
       (resp) => {
         console.log(resp);
-        this.bookDetails = resp as Book[];
+        this.bookDetails = resp;
       },
       (err) => {
         console.log(err);
