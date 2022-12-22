@@ -14,6 +14,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchComponent } from './components/search/search.component';
+import { BookItemComponent } from './components/book-item/book-item.component';
+import { AddBookComponent } from './components/add-book/add-book.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { SearchComponent } from './components/search/search.component';
     SignUpComponent,
     HeaderComponent,
     FooterComponent,
-    SearchComponent
+    SearchComponent,
+    BookItemComponent,
+    AddBookComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +36,7 @@ import { SearchComponent } from './components/search/search.component';
     NoopAnimationsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
