@@ -28,13 +28,12 @@ public class ReaderController {
 	public ResponseEntity<?> unsubcribeBook(@PathVariable("sub-id") Long subId,
 			@RequestBody SubscribeDetails subDetails) {
 		Integer result = bookService.unsubscribeBook(subId, subDetails);
-		if (result == 0) {
-			return new ResponseEntity<>("You can't unsubscribe this book due to time limit exceed for this action!",
-					HttpStatus.OK);
+		if(result == 0) {
+			return new ResponseEntity<>("You can't unsubscribe this book due to time limit exceed for this action!", HttpStatus.OK);
 		} else {
 			return new ResponseEntity<>("Book unsubscribed successfully!", HttpStatus.OK);
 		}
-
+		
 	}
 
 	@GetMapping("/getall/by-user/{subName}")
@@ -46,5 +45,4 @@ public class ReaderController {
 	public ResponseEntity<?> getBookByUserAndSubId(@PathVariable String subName, @PathVariable Long subId) {
 		return new ResponseEntity<>(bookService.getBookBySubscribedId(subName, subId), HttpStatus.OK);
 	}
-
 }

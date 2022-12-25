@@ -1,6 +1,7 @@
 package com.book.service;
 
 import java.util.List;
+
 import com.book.entity.Book;
 import com.book.bean.BookFilter;
 import com.book.bean.SubscribeDetails;
@@ -17,6 +18,10 @@ public interface IBookService {
 	public Book getBookById(Long id);
 	
 	public List<Book> searchBook(BookFilter filter);
+	
+	public List<Book> getAllBooks(String author);
+	
+	public void deleteBook(Long id);
 	
 	//reader
 	public Long subscribeBook(Long bookId, SubscribeDetails subDetails);

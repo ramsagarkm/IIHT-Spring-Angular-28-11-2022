@@ -14,8 +14,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchComponent } from './components/search/search.component';
-import { BookItemComponent } from './components/book-item/book-item.component';
 import { AddBookComponent } from './components/add-book/add-book.component';
+import { MatCardModule } from '@angular/material/card';
+import { ViewBookComponent } from './components/view-book/view-book.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { SubscribedBookComponent } from './components/subscribed-book/subscribed-book.component';
 
 @NgModule({
   declarations: [
@@ -27,8 +30,9 @@ import { AddBookComponent } from './components/add-book/add-book.component';
     HeaderComponent,
     FooterComponent,
     SearchComponent,
-    BookItemComponent,
-    AddBookComponent
+    AddBookComponent,
+    ViewBookComponent,
+    SubscribedBookComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +41,8 @@ import { AddBookComponent } from './components/add-book/add-book.component';
     ReactiveFormsModule,
     HttpClientModule,
     CommonModule,
+    MatCardModule,
+    MatSnackBarModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

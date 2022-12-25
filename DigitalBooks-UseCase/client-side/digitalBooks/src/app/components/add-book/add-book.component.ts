@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import Book from 'src/app/models/book';
+import Book, { BookContent } from 'src/app/models/book';
 import { BookService } from 'src/app/services/book.service';
 
 @Component({
+  // changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-add-book',
   templateUrl: './add-book.component.html',
   styleUrls: ['./add-book.component.css']
@@ -13,6 +14,8 @@ export class AddBookComponent implements OnInit {
   bookForm: any = FormGroup;
   submitted = false;
   book: Book = new Book();
+  bookContent: BookContent = new BookContent();
+  BookContentList: BookContent[] = [];
 
   constructor(private formBuilder: FormBuilder,
     private bookService: BookService
@@ -45,16 +48,20 @@ export class AddBookComponent implements OnInit {
     }
     //True if all the fields are filled
     if (this.submitted) {
+      console.log("wel");
       this.createBook();
     }
   }
 
   //create new book
   createBook() {
+    // console.log(this.book);
+    this.BookContentList.push(this.bookContent);
+    this.book.bookContentDetails = this.BookContentList;
     const observables = this.bookService.createBook(this.book);
     observables.subscribe(
       (res: any) => {
-        // console.log(res);
+        console.log(res);
       }, function (error) {
         console.log(error);
         alert("Something went wrong !, Please try again");

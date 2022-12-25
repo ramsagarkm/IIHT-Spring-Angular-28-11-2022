@@ -7,8 +7,9 @@ export default class Book {
     author: string = '';
     isActive: boolean = false;
     publisher: string = '';
-    publishedDate: any;
-    bookContentDetails: BookContent = new BookContent();
+    publishedDate: string = ''
+    bookContentDetails: BookContent[] = [];
+    createdTime: any;
 }
 
 export class BookContent {
@@ -23,4 +24,10 @@ export class BookFilter {
     category: string = '';
     author: string = '';
     price: number = 0;
+}
+
+export class SubscribeDetails {
+    subName: string = '';
+    subRole: string = '';
+    isSubscribed: boolean = false;
 }

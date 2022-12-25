@@ -1,12 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import Book, { BookFilter } from 'src/app/models/book';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import Book, { BookFilter, SubscribeDetails } from 'src/app/models/book';
 import { BookService } from 'src/app/services/book.service';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css']
+  styleUrls: ['./search.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class SearchComponent implements OnInit {
 
@@ -15,11 +18,14 @@ export class SearchComponent implements OnInit {
   submitted = false;
   filter: BookFilter = new BookFilter();
   books: Book[] = [];
-  items: string[] = ['hello','hi', '1', '2']
+  subDetails: SubscribeDetails = new SubscribeDetails();
+  enable: boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
-    private bookService: BookService
+    private bookService: BookService,
+    private snackBar: MatSnackBar,
+    private tokenService: TokenStorageService
   ) { }
   //Add user form actions
   get f() { return this.SearchForm.controls; }
@@ -38,6 +44,12 @@ export class SearchComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (this.tokenService.getUser().role === 'READER' || this.tokenService.getUser().role === 'AUTHOR') {
+      this.enable = true;
+    }
+    // console.log(this.tokenService.getUser().role);
+    // console.log(this.enable);
+
     //Add User form validations
     this.SearchForm = this.formBuilder.group({
       title: [[]],
@@ -49,12 +61,46 @@ export class SearchComponent implements OnInit {
 
   //get all books based on filter
   searchBooks() {
+    // console.log(this.filter);
     const promise = this.bookService.searchBooks(this.filter);
     promise.subscribe(
       (res) => {
-        console.log(res);
+        // console.log(res);
         this.books = res as Book[];
-      });
+        this.successSnackBar("Book loaded successfully!");
+      }, (err) => {
+        this.errorSnackBar("Something went wrong !, Please try again");
+        console.log(err);
+      }
+    );
+  }
+
+  //subscribe book
+  subscribeBook(book: any) {
+    this.subDetails.subName = this.tokenService.getUser().username;
+    this.subDetails.subRole = this.tokenService.getUser().role;
+    this.subDetails.isSubscribed = true;
+    const observable = this.bookService.subscribeBook(book, this.subDetails);
+    observable.subscribe(
+      (res) => {
+        this.successSnackBar("Book subscribed successfully!");
+      }, (err) => {
+        this.errorSnackBar("Something went wrong !, Please try again");
+        console.log(err);
+      }
+    )
+  }
+
+  successSnackBar(message: string) {
+    this.snackBar.open(message, 'X', {
+      duration: 5000, panelClass: 'snackbar-success'
+    });
+  }
+
+  errorSnackBar(message: string) {
+    this.snackBar.open(message, 'X', {
+      duration: 5000, panelClass: 'snackbar-error'
+    });
   }
 
 }
