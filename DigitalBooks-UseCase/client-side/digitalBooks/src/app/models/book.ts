@@ -1,5 +1,5 @@
 export default class Book {
-    logo: any;
+    logo: string = '';
     title: string = '';
     description: string = '';
     category: string = '';
@@ -15,8 +15,6 @@ export default class Book {
 export class BookContent {
     contentType: string = '';
     content: string = '';
-    // createdTime: Date = new Date();
-    // updatedTime: Date = new Date();
 }
 
 export class BookFilter {
@@ -30,4 +28,10 @@ export class SubscribeDetails {
     subName: string = '';
     subRole: string = '';
     isSubscribed: boolean = false;
+}
+
+export class Notification {
+    username: string = '';
+    msg: string = '';
+    createdTime: any;
 }

@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import Book, { BookContent } from 'src/app/models/book';
 import { BookService } from 'src/app/services/book.service';
 
 @Component({
-  // changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-add-book',
   templateUrl: './add-book.component.html',
-  styleUrls: ['./add-book.component.css']
+  styleUrls: ['./add-book.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class AddBookComponent implements OnInit {
   //Form Validables 
@@ -18,12 +19,14 @@ export class AddBookComponent implements OnInit {
   BookContentList: BookContent[] = [];
 
   constructor(private formBuilder: FormBuilder,
-    private bookService: BookService
+    private bookService: BookService,
+    private snackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
     //Add User form validations
     this.bookForm = this.formBuilder.group({
+      logo: ['', [Validators.required]],
       title: ['', [Validators.required, Validators.pattern]],
       description: ['', [Validators.required, Validators.pattern]],
       category: ['', [Validators.required, Validators.pattern]],
@@ -33,7 +36,7 @@ export class AddBookComponent implements OnInit {
       publishedDate: ['', [Validators.required]],
       isActive: ['', [Validators.required]],
       contentType: ['', [Validators.required, Validators.pattern]],
-      content: ['', [Validators.required, Validators.pattern]]
+      content: ['', [Validators.required]]
     });
   }
 
@@ -48,25 +51,37 @@ export class AddBookComponent implements OnInit {
     }
     //True if all the fields are filled
     if (this.submitted) {
-      console.log("wel");
       this.createBook();
     }
   }
 
   //create new book
   createBook() {
-    // console.log(this.book);
+    this.BookContentList = [];
     this.BookContentList.push(this.bookContent);
     this.book.bookContentDetails = this.BookContentList;
     const observables = this.bookService.createBook(this.book);
     observables.subscribe(
       (res: any) => {
-        console.log(res);
-      }, function (error) {
+        // console.log(res);
+        this.successSnackBar("Book saved successfully!");
+      }, (error) => {
+        this.errorSnackBar("Something went wrong !, Please try again");
         console.log(error);
-        alert("Something went wrong !, Please try again");
       }
     )
+  }
+
+  successSnackBar(message: string) {
+    this.snackBar.open(message, 'X', {
+      duration: 5000, panelClass: 'snackbar-success'
+    });
+  }
+
+  errorSnackBar(message: string) {
+    this.snackBar.open(message, 'X', {
+      duration: 5000, panelClass: 'snackbar-error'
+    });
   }
 
 }

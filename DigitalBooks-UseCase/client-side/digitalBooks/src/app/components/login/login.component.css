@@ -3,7 +3,7 @@
 }
 
 .bg-image {
-  background-image: url('../../../assets/login-image.jfif');
+  background-image: url('../../../assets/login-images.png');
   background-size: cover;
   background-position: center;
 }

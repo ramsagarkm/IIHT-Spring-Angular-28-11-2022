@@ -47,8 +47,6 @@ export class SearchComponent implements OnInit {
     if (this.tokenService.getUser().role === 'READER' || this.tokenService.getUser().role === 'AUTHOR') {
       this.enable = true;
     }
-    // console.log(this.tokenService.getUser().role);
-    // console.log(this.enable);
 
     //Add User form validations
     this.SearchForm = this.formBuilder.group({
@@ -57,6 +55,8 @@ export class SearchComponent implements OnInit {
       price: [[]],
       author: [[]]
     });
+    //onloading
+    this.searchBooks();
   }
 
   //get all books based on filter
@@ -65,7 +65,7 @@ export class SearchComponent implements OnInit {
     const promise = this.bookService.searchBooks(this.filter);
     promise.subscribe(
       (res) => {
-        // console.log(res);
+        console.log(res);
         this.books = res as Book[];
         this.successSnackBar("Book loaded successfully!");
       }, (err) => {
@@ -83,7 +83,9 @@ export class SearchComponent implements OnInit {
     const observable = this.bookService.subscribeBook(book, this.subDetails);
     observable.subscribe(
       (res) => {
-        this.successSnackBar("Book subscribed successfully!");
+        let body = JSON.parse(JSON.stringify(res)).body;
+        // console.log(body);
+        this.successSnackBar("Book subscribed successfully! subscription_Id is " + body);
       }, (err) => {
         this.errorSnackBar("Something went wrong !, Please try again");
         console.log(err);
