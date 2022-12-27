@@ -10,6 +10,10 @@
                         placeholder="Enter your title" formControlName="title"
                         [ngClass]="{ 'is-invalid': submitted && f.title.errors }" pattern="[A-Za-z ]{1,32}"
                         title="Title should contains alphabets only">
+                    <!-- <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+                        <div *ngIf="f.title.errors.required">Title is required</div>
+                        <div *ngIf="f.title.errors.pattern">Title must be a valid title</div>
+                    </div> -->
                 </div>
                 <div class="column">
                     <label for="category">Category</label>
@@ -63,9 +67,9 @@
             <div class="col" *ngFor="let b of books, index as i">
                 <div class="card mb-3" style="max-width: 540px;">
                     <div class="row g-0">
-                        <div class="col-md-4">
+                       <div class="col-md-4">
                             <img [src]="b.logo" class="img-fluid rounded-start" alt="book" style="height: 100%;">
-                        </div>
+                        </div> 
                         <div class="col-md-8">
                             <div class="card-body">
                                 <h5 class="card-title fs-6 badge bg-primary text-wrap">{{b.title}}</h5>

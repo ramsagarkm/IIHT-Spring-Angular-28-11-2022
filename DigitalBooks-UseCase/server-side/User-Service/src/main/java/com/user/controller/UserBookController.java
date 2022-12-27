@@ -24,7 +24,7 @@ import com.user.bean.SubscribeDetails;
 
 @RestController
 @RequestMapping("/api/v1/digitalbooks")
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin
 public class UserBookController {
 
 	@Autowired
